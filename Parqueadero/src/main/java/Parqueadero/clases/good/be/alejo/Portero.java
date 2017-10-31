@@ -22,7 +22,7 @@ public class Portero {
 		return true;
 	}
 	
-	public double calcularValorParqueo() {
+	public double calcularValorParqueo(String placa) {
 		return 0.0;
 	}
 
