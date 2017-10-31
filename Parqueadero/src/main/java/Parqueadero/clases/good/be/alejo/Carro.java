@@ -1,5 +1,8 @@
 package Parqueadero.clases.good.be.alejo;
 
-public class Carro {
+public class Carro extends Vehiculo implements Parqueo{
 
+	public boolean parquear() {
+		return false;
+	}
 }
