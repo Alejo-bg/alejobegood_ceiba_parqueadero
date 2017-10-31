@@ -1,5 +1,7 @@
 package Parqueadero.clases.good.be.alejo;
 
+import java.util.ArrayList;
+
 public class Parqueadero {
 	private int id;
 	private String direccion;
@@ -8,11 +10,30 @@ public class Parqueadero {
 	public final int MAX_CAPACIDAD_MOTOS=10;
 	private int puestosDisponiblesCarros;
 	private int puestosDisponiblesMotos;
-	private String[] zonaParqueoMotos;
-	private String[] zonaParqueCarros;
+	private ArrayList<String> zonaParqueoMotos;
+	private ArrayList<String> zonaParqueCarros;
 	public final double PRECIO_HORA_MOTO=500;
 	public final double PRECIO_HORA_CARRO=1000;
 	public final double PRECIO_DIA_MOTO=600;
 	public final double PRECIO_DIA_CARRO=8000;
 	public final double incrementoCilindrajeMayor=2000;
+	
+	
+	public ArrayList<String> getZonaParqueoMotos() {
+		return zonaParqueoMotos;
+	}
+	
+	public void setZonaParqueoMotos(ArrayList<String> zonaParqueoMotos) {
+		this.zonaParqueoMotos = zonaParqueoMotos;
+	}
+	public ArrayList<String> getZonaParqueCarros() {
+		return zonaParqueCarros;
+	}
+	public void setZonaParqueCarros(ArrayList<String> zonaParqueCarros) {
+		this.zonaParqueCarros = zonaParqueCarros;
+	}
+	
+	
+	
+	
 }
