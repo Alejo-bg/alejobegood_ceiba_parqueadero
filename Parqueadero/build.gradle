@@ -9,7 +9,11 @@
 // Apply the java-library plugin to add support for Java Library
 plugins {
     id "org.sonarqube" version "2.5"
+    id "org.akhikhl.gretty" version "2.0.0"
+    
 }  
+
+apply plugin: "org.akhikhl.gretty"
 
 apply plugin: 'java-library'
 
@@ -18,6 +22,9 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 
 apply plugin: 'jacoco'
+
+apply plugin: 'war'
+
 
 
 // In this section you declare where to find the dependencies of your project
@@ -58,6 +65,10 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'junit:junit:4.12'
 }
+
+
+
+  
 
 
 
