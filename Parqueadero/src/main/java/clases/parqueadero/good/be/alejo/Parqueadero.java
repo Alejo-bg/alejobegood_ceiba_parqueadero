@@ -1,4 +1,4 @@
-package Parqueadero.clases.good.be.alejo;
+package clases.parqueadero.good.be.alejo;
 
 import java.util.ArrayList;
 

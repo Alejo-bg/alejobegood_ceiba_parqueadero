@@ -1,9 +1,9 @@
-package parqueadero.test.good.be.alejo;
+package test.parqueadero.good.be.alejo;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import Parqueadero.clases.good.be.alejo.Portero;
+import clases.parqueadero.good.be.alejo.Portero;
 
 public class PorteroTest extends Portero{
 

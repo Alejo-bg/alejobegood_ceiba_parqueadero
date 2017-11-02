@@ -1,4 +1,4 @@
-package Parqueadero.clases.good.be.alejo;
+package clases.parqueadero.good.be.alejo;
 
 public class Vehiculo {
 	private String placa;
