@@ -32,5 +32,9 @@ public class Registro {
 		return Placa;
 	}
 	
+	public void setFechaSalida(Date fecha) {
+		this.fechaSalida = fecha;
+	}
+	
 	
 }

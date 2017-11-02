@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.Test;
 
@@ -21,9 +22,22 @@ public class RegistroTest {
 	public void iniciarRegistroTest() {
 		Registro registro = new Registro(placaCarro,Carro);
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-		dateFormat.format(registro.getFechaEntrada());
-		assertEquals("2017/02/17","2017/02/17");
+		Date fecha= new Date();
+		String fechaActual = dateFormat.format(new Date());
+		String fechaOptenida = dateFormat.format(registro.getFechaEntrada());
+		assertEquals(fechaActual, fechaOptenida);
 		
+	}
+	
+	@Test
+	public void registrarSalidaTest() {
+		Registro registro = new Registro(placaCarro,Carro);
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		Date fecha= new Date();
+		registro.setFechaSalida(fecha);
+		String fechaActual = dateFormat.format(new Date());
+		String fechaOptenida = dateFormat.format(registro.getFechaSalida());
+		assertEquals(fechaActual, fechaOptenida);
 	}
 
 }
