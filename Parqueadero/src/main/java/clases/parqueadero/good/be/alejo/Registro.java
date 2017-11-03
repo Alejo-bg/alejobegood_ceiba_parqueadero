@@ -36,5 +36,9 @@ public class Registro {
 		this.fechaSalida = fecha;
 	}
 	
+	public String toString() {
+		return "El vehiculo con placas "+this.Placa+" ingreso en la fecha " + this.fechaEntrada.toString();
+		}
+	
 	
 }

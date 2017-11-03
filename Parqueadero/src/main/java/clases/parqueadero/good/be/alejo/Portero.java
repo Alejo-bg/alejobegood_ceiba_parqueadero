@@ -1,6 +1,7 @@
 package clases.parqueadero.good.be.alejo;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
@@ -48,22 +49,36 @@ public class Portero {
 	}
 	
 	
-	public String registrarEntrada(String placa, TipoVehiculo tipoVehiculo) {
-		switch(tipoVehiculo) {
-			case MOTO:
-				if(!this.validarPuestosDisponiblesCarros()) {
-					return "No hay puestos disponibles";
-				}
-			case CARRO:	
-				if(!this.validarPuestosDisponiblesMotos()) {
-					return "No hay puestos disponibles";
-				}
-				
+	public String registrarEntradaMotos(String placa) {
+		if(!this.validarIngresoPlaca(placa)) {
+			return "no puede ingresar porque no está en un dia hábil";
 		}
-		Registro registroTemp = new Registro(placa, tipoVehiculo);
-		this.registros.put(placa, registroTemp);
 		
-	return "";
+		if(!this.validarPuestosDisponiblesMotos()) {
+					return "No hay puestos disponibles";
+		}
+		
+		Registro registroTemp = new Registro(placa, TipoVehiculo.MOTO);
+		this.registros.put(placa, registroTemp);
+		this.parqueadero.setPuestosDisponiblesMotos(this.parqueadero.getPuestosDisponiblesMotos()-1);
+	return registroTemp.toString();
+	}
+	
+	public String registrarEntradaCarros(String placa) {
+		if(!this.validarIngresoPlaca(placa)) {
+			return "no puede ingresar porque no está en un dia hábil";
+		}
+		
+		
+		if(!this.validarPuestosDisponiblesCarros()) {
+			return "No hay puestos disponibles";
+		}
+		Registro registroTemp = new Registro(placa, TipoVehiculo.CARRO);
+		this.registros.put(placa, registroTemp);
+		this.parqueadero.setPuestosDisponiblesCarros(this.parqueadero.getPuestosDisponiblesCarros()-1);
+	return registroTemp.toString();
+	
+	
 	
 	}
 	
@@ -75,7 +90,7 @@ public class Portero {
 	}
 	
 	public boolean validarPuestosDisponiblesCarros() {
-		if (this.parqueadero.getPuestosDisponiblesCarros()>0) {
+		if(this.parqueadero.getPuestosDisponiblesCarros()>0) {
 			return true;
 		}
 		
@@ -84,13 +99,23 @@ public class Portero {
 	
 	
 	public boolean validarPuestosDisponiblesMotos() {
-		if (this.parqueadero.getPuestosDisponiblesMotos()>0) {
+		if(this.parqueadero.getPuestosDisponiblesMotos()>0) {
 			return true;
 		}
 		
 		return false;
 	}
 	
+	
+	public boolean validarIngresoPlaca(String placa) {
+		Calendar fechaActual = Calendar.getInstance();
+		if((fechaActual.DAY_OF_WEEK==Calendar.SUNDAY)||(fechaActual.DAY_OF_WEEK==Calendar.MONDAY)) {
+			if(placa.charAt(0)=='A') {
+				return true;
+			}
+		}	
+		return false;
+	}
 	
 
 }
