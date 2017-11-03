@@ -19,6 +19,24 @@ public class Parqueadero {
 	public final double incrementoCilindrajeMayor=2000;
 	
 	
+	
+	
+	public int getPuestosDisponiblesCarros() {
+		return puestosDisponiblesCarros;
+	}
+
+	public void setPuestosDisponiblesCarros(int puestosDisponiblesCarros) {
+		this.puestosDisponiblesCarros = puestosDisponiblesCarros;
+	}
+
+	public int getPuestosDisponiblesMotos() {
+		return puestosDisponiblesMotos;
+	}
+
+	public void setPuestosDisponiblesMotos(int puestosDisponiblesMotos) {
+		this.puestosDisponiblesMotos = puestosDisponiblesMotos;
+	}
+
 	public ArrayList<String> getZonaParqueoMotos() {
 		return zonaParqueoMotos;
 	}
