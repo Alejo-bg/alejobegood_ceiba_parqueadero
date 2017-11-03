@@ -41,8 +41,9 @@ public class Portero {
 		return 0.0;
 	}
 	
-	public boolean buscarCarro(String carro) {
-		return true;
+	public Registro buscarVehiculo(String placa) {
+		Registro registroTemp=this.registros.get(placa);
+		return registroTemp;
 	}
 	
 	
@@ -80,7 +81,7 @@ public class Portero {
 	}
 	
 	public Registro registrarSalida (String placa, Date fechaSalida) {
-		Registro registroTemp=this.registros.get(placa);
+		Registro registroTemp=this.buscarVehiculo(placa);
 		registroTemp.setFechaSalida(fechaSalida);
 		return registroTemp;
 		

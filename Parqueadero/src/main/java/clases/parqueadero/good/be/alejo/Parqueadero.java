@@ -19,8 +19,12 @@ public class Parqueadero {
 	public final double incrementoCilindrajeMayor=2000;
 	
 	
-	
-	
+		public Parqueadero() {
+		super();
+		this.puestosDisponiblesCarros = MAX_CAPACIDAD_CARROS;
+		this.puestosDisponiblesMotos = MAX_CAPACIDAD_MOTOS;
+	}
+
 	public int getPuestosDisponiblesCarros() {
 		return puestosDisponiblesCarros;
 	}
