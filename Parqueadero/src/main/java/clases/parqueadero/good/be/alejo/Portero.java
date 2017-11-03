@@ -62,6 +62,7 @@ public class Portero {
 	return registroTemp.toString();
 	}
 	
+	//----------------------------------------------------------------//
 	public String registrarEntradaCarros(String placa) {
 		if(!this.validarIngresoPlaca(placa)) {
 			return "no puede ingresar porque no está en un dia hábil";
@@ -113,6 +114,18 @@ public class Portero {
 			}
 		}	
 		return false;
+	}
+	
+	
+	public void registrarSalida(String placa) {
+		this.calcularCostoParqueo(placa);
+		
+		registros.remove(placa);
+	}
+	
+	public double calcularCostoParqueo(String placa) {
+		
+		return 0.0;
 	}
 	
 
