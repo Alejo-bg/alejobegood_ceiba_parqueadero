@@ -36,9 +36,6 @@ public class Portero {
 		
 	}
 	
-	public boolean comprobarDisponibilidadParquederoCarros(){
-		return true;
-	}
 	
 	public double calcularValorParqueoCarros(String placa) {
 		return 0.0;
